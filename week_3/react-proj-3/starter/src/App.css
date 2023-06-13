@@ -90,6 +90,10 @@ video {
 
 /* --------- Begin your CSS Below here --------- */
 
+.App {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -99,7 +103,7 @@ header {
 }
 
 header * {
-	font-size: 28px;
+	font-size: 24px;
 	color: white;
 }
 
@@ -133,7 +137,7 @@ footer {
 }
 
 .social-title {
-	font-size: 24px;
+	font-size: 20px;
 	color: white;
 }
 
@@ -146,8 +150,82 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #26aae1;
+	background-color: #568a8a;
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
+}
+
+h3 {
+	color: white;
+}
+
+#ad-banner {
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	background-image: linear-gradient(
+			190deg,
+			rgba(0, 0, 0, 0.8),
+			rgba(0, 0, 0, 0.8)
+		),
+		url('./assets/salmon.jpg');
+	background-size: 80% 130%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#banner-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 90px 0px;
+	font-size: 20px;
+	width: 710px;
+	text-align: center;
+}
+
+#banner-title {
+	font-size: 60px;
+	color: rgb(217, 108, 25);
+	font-weight: bold;
+}
+
+.blue-btn {
+	background-color: #568a8a;
+	color: white;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.recipe-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	font-size: 20px;
+	box-shadow: 0.2px 0.2px 1px 1px silver;
+}
+
+img {
+	height: 350px;
+	width: 350px;
+}
+
+#recipe-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 100px;
+	justify-content: center;
+	gap: 40px;
+	text-align: center;
+}
+
+.recipe-btn {
+	background-color: #568a8a;
+	color: white;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin: 15px 0px;
 }

@@ -6,7 +6,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className='socials'>
-				<div className='social-title'>Hit us up on our socials!</div>
+				<div className='social-title'>Hit us up on our Socials!</div>
 				<div className='icons'>
 					<div className='icon-wrapper'>
 						<a href='https://www.devmountain.com' target='_blank'>

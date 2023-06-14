@@ -205,20 +205,28 @@ h3 {
 	align-items: center;
 	gap: 15px;
 	font-size: 20px;
-	box-shadow: 0.2px 0.2px 1px 1px silver;
+	box-shadow: 0px 3px 1px 1px rgb(208, 208, 208);
+	border-radius: 5px;
 }
 
 img {
 	height: 350px;
 	width: 350px;
+	border-radius: 5px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #recipe-container {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 100px;
+	padding: 75px 0px 100px 0px;
 	justify-content: center;
-	gap: 40px;
+	gap: 100px;
 	text-align: center;
 }
 
@@ -228,4 +236,30 @@ img {
 	padding: 10px 20px;
 	font-size: 16px;
 	margin: 15px 0px;
+}
+
+#search-container {
+	display: flex;
+	align-items: center;
+	padding: 8px 10px;
+	margin-top: 40px;
+	gap: 10px;
+	width: 500px;
+	height: 40px;
+	border: none;
+	border-radius: 50px;
+	background-color: #f6ded0;
+	font-size: 40px;
+}
+
+#search-bar {
+	flex: 1;
+	background-color: transparent;
+	border: none;
+	height: inherit;
+	font-size: 26px;
+}
+
+#search-bar:focus-visible {
+	outline: none;
 }

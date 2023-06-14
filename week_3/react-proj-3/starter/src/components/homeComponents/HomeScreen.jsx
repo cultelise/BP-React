@@ -3,15 +3,14 @@ import AdBanner from './AdBanner';
 import axios from 'axios';
 import '../../App.css';
 import RecipeCard from '../recipeComponents/RecipeCard';
-import salmon from '../../assets/salmon.jpg';
-
+import { BiSearchAlt2 } from 'react-icons/bi';
 const HomeScreen = () => {
 	const [recipes, setRecipes] = useState([]);
+	const [searchInput, setSearchInput] = useState('');
 
 	const getData = async () => {
 		const response = await axios.get('http://recipes.devmountain.com/recipes');
 
-		console.log(filterRecipes(response.data));
 		setRecipes(filterRecipes(response.data));
 	};
 
@@ -32,6 +31,27 @@ const HomeScreen = () => {
 		});
 	};
 
+	const searchRecipes = () => {
+		return recipes.map((recipe, index) => {
+			if (
+				recipe.recipe_name.toLowerCase().includes(searchInput.toLowerCase())
+			) {
+				return (
+					<RecipeCard
+						key={recipe.recipe_name}
+						title={recipe.recipe_name}
+						url={recipe.image_url}
+					/>
+				);
+			}
+		});
+	};
+
+	const searchHandler = (event) => {
+		console.log(event.target.value);
+		setSearchInput(event.target.value);
+	};
+
 	useEffect(() => {
 		getData();
 	}, []);
@@ -39,17 +59,21 @@ const HomeScreen = () => {
 	return (
 		<div>
 			<AdBanner />
-			<div id='recipe-container'>
-				{recipes.map((recipe, index) => {
-					return (
-						<RecipeCard
-							key={recipe.recipe_name}
-							title={recipe.recipe_name}
-							url={recipe.image_url}
-						/>
-					);
-				})}
-			</div>
+			<main>
+				<div id='search-container'>
+					<BiSearchAlt2 style={{ color: '#D96D19' }}></BiSearchAlt2>
+					<label htmlFor='search-bar'></label>
+					<input
+						type='text'
+						id='search-bar'
+						name='search-bar'
+						placeholder='Search Recipes'
+						value={searchInput}
+						onChange={searchHandler}
+					/>
+				</div>
+				<div id='recipe-container'>{searchRecipes()}</div>
+			</main>
 		</div>
 	);
 };

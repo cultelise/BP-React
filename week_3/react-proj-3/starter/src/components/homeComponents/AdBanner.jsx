@@ -1,23 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AdBanner = () => {
-	return (
-		<div id='ad-banner'>
-			<div id='banner-content'>
-				<h3>New Recipe</h3>
-				<div id='banner-title'>Pineapple Salmon</div>
-				<h3>
-					This recipe consists of fresh wild Alaskan salmon, rubbed in a bbq
-					brown sugar rub, baked for 25 minutes on a bed of pineapple, and
-					garnished in butter, garlic, and chives. You won’t want to miss it!
-				</h3>
-				<Link to='/recipe/3'>
-					<button className='blue-btn'>Check it out</button>
-				</Link>
-			</div>
-		</div>
-	);
+const AdBanner = ({ title, content, id, url }) => {
+	const display = () => {
+		if (content) {
+			return (
+				<div
+					id='ad-banner'
+					style={{
+						backgroundImage: `linear-gradient(190deg,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(${url})`,
+					}}
+				>
+					<div id='banner-content'>
+						<h3>New Recipe</h3>
+						<div id='banner-title'>{title}</div>
+						<h3>{content}</h3>
+						<Link to={`/recipe/${id}`}>
+							<button className='blue-btn'>Check it out</button>
+						</Link>
+					</div>
+				</div>
+			);
+		} else {
+			return (
+				<div
+					id='ad-banner'
+					style={{
+						backgroundImage: `linear-gradient(190deg,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(${url})`,
+					}}
+				>
+					<div id='banner-content-details'>
+						<div id='banner-title'>{title}</div>
+					</div>
+				</div>
+			);
+		}
+	};
+
+	return display();
 };
 
 export default AdBanner;

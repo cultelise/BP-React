@@ -164,13 +164,7 @@ h3 {
 	display: flex;
 	justify-content: center;
 	background-color: black;
-	background-image: linear-gradient(
-			190deg,
-			rgba(0, 0, 0, 0.8),
-			rgba(0, 0, 0, 0.8)
-		),
-		url('./assets/salmon.jpg');
-	background-size: 80% 130%;
+	background-size: 100% 160%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -178,12 +172,26 @@ h3 {
 #banner-content {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	gap: 20px;
 	padding: 90px 0px;
 	font-size: 20px;
 	width: 710px;
 	text-align: center;
+	min-height: 250px;
+}
+
+#banner-content-details {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 90px 0px;
+	font-size: 20px;
+	width: 710px;
+	text-align: center;
+	min-height: 250px;
 }
 
 #banner-title {
@@ -215,7 +223,7 @@ img {
 	border-radius: 5px;
 }
 
-main {
+#home-main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -262,4 +270,135 @@ main {
 
 #search-bar:focus-visible {
 	outline: none;
+}
+
+#details-main {
+	display: flex;
+	justify-content: space-evenly;
+	min-height: 600px;
+	padding: 0px 300px;
+	gap: 200px;
+}
+
+#details-card {
+	margin: 30px 0px;
+	padding: 0px 30px 20px;
+	box-shadow: 0px 3px 1px 1px rgb(208, 208, 208);
+	border-radius: 5px;
+	min-width: 200px;
+	max-width: 500px;
+}
+
+#info-title,
+#instructions-title {
+	font-size: 30px;
+	text-align: center;
+	padding: 15px 0px;
+}
+
+#ingredients-title {
+	font-size: 30px;
+	text-align: center;
+	padding: 30px 0px 15px;
+}
+
+li {
+	margin: 5px 0px;
+}
+
+#form-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	text-align: center;
+	margin: 40px 0px;
+}
+
+form * {
+	font-size: 16px;
+}
+
+#form-title {
+	font-size: 30px;
+}
+
+#form-name-url {
+	display: flex;
+	justify-content: space-between;
+}
+
+#name-input,
+#url-input {
+	width: 200px;
+}
+
+#form-ingredients {
+	display: flex;
+	gap: 100px;
+}
+
+#ingredients-input {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+#ingredients-button {
+	color: white;
+	background-color: #d96d19;
+	width: fit-content;
+	align-self: center;
+	padding: 8px 10px;
+}
+
+.form-input {
+	height: 30px;
+	padding: 2px 5px;
+}
+
+#instructions-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+textarea {
+	padding: 10px 20px;
+	height: 100px;
+}
+
+label {
+	font-size: 30px;
+	display: grid;
+	grid-template-columns: 1em auto;
+	gap: 5px;
+}
+
+#labels {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+#form-deets {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.small-input {
+	width: 140px;
+	height: 30px;
+}
+
+#form-button {
+	color: white;
+	background-color: #568a89;
+	padding: 8px 40px;
 }

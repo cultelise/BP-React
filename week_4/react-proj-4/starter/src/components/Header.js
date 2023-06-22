@@ -40,7 +40,10 @@ const Header = () => {
 							<NavLink
 								style={styleActiveLink}
 								to='auth'
-								onClick={() => authCtx.logout()}
+								onClick={() => {
+									authCtx.logout();
+									window.location.reload();
+								}}
 							>
 								Logout
 							</NavLink>

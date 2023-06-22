@@ -5,7 +5,7 @@ import AuthContext from '../store/authContext';
 const Auth = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const [register, setRegister] = useState(true);
+	const [register, setRegister] = useState(false);
 
 	const authCtx = useContext(AuthContext);
 
@@ -17,17 +17,20 @@ const Auth = () => {
 			password: password,
 		};
 
-		const url = 'https://socialmtn.devmountain.com';
+		const url = 'http://localhost:3000';
 
 		try {
 			let response = await axios.post(
 				register ? `${url}/register` : `${url}/login`,
 				body
 			);
-			console.log(response.data);
+			if (response.status === 200) {
+				alert(register ? 'register successful' : 'login successful');
+			}
 			const { token, exp, userId, username } = response.data;
 			authCtx.login(token, exp, userId);
 		} catch (error) {
+			alert(error.response.data);
 			console.log(error);
 		}
 	};

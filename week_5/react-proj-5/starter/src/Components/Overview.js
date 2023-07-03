@@ -7,12 +7,18 @@ const Overview = () => {
 
 	console.log(currentDisplay);
 
+	const languages = (current) => {
+		for (let item in current) {
+			console.log(item);
+		}
+	};
+
 	return (
 		<div className='stack'>
 			<ul>
 				<h2>Name: {currentDisplay.name.common}</h2>
 				<h2>Flag: {currentDisplay.flag}</h2>
-				<h2>Languages: {currentDisplay.languages.eng}</h2>
+				<h2>Languages: {languages(currentDisplay.languages)}</h2>
 				<h2>Capital: {currentDisplay.capital}</h2>
 			</ul>
 		</div>
